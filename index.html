@@ -1,24 +1,40 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tookie WebApp</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tookie Cookie Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🍪 Магазин печений Tookie</h1>
-
-  <div>
-    <button class="add-btn" data-flavor="Шоколадное">Добавить шоколадное</button>
-    <button class="add-btn" data-flavor="Овсяное">Добавить овсяное</button>
-    <button class="add-btn" data-flavor="Карамельное">Добавить карамельное</button>
-  </div>
-
-  <h2>🛒 Корзина</h2>
-  <ul id="cart"></ul>
-  <p>💵 Итого: <span id="total">0 сум</span></p>
-  <button id="checkout">Оформить</button>
-
-  <script src="script.js"></script>
+    <header>
+        <h1>Tookie Cookie</h1>
+        <p>🍪 Вкусные печенья для вас!</p>
+    </header>
+    <main>
+        <section id="products">
+            <h2>Наши вкусы</h2>
+            <div id="product-list" class="product-grid"></div>
+        </section>
+        <section id="cart">
+            <h2>Ваша корзина</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <label for="promocode">Промокод:</label>
+                <div class="promocode-container">
+                    <input type="text" id="promocode" placeholder="Введите промокод">
+                    <button onclick="applyPromocode()">Применить</button>
+                </div>
+                <p id="promocode-status"></p>
+                <p><strong>Итого:</strong> <span id="cart-total">0 сум</span></p>
+                <button onclick="submitOrder()" id="submit-order" disabled>Оформить заказ</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Tookie Cookie. С любовью к сладостям! 🍬</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
