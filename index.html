@@ -13,8 +13,17 @@
         <p>🍪 Вкусные печенья для вас!</p>
     </header>
     <main>
-        <section id="products">
-            <h2>Наши вкусы</h2>
+        <section id="box-selection">
+            <h2>Выберите коробку</h2>
+            <div id="box-options" class="box-grid">
+                <button onclick="selectBox(1)">1 шт (12,000 сум)</button>
+                <button onclick="selectBox(3)">3 шт (35,000 сум)</button>
+                <button onclick="selectBox(4)">4 шт (42,000 сум)</button>
+                <button onclick="selectBox(6)">6 шт (65,000 сум)</button>
+            </div>
+        </section>
+        <section id="products" style="display: none;">
+            <h2>Выберите вкусы (<span id="remaining-cookies">0</span> осталось)</h2>
             <div id="product-list" class="product-grid"></div>
         </section>
         <section id="cart">

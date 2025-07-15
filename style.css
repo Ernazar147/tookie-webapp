@@ -28,6 +28,34 @@ h2 {
     margin-bottom: 20px;
 }
 
+.box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.box-grid button {
+    background: #fff;
+    border: 1px solid #ff6b81;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 1em;
+    color: #ff6b81;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.box-grid button:hover {
+    background: #ff6b81;
+    color: #fff;
+}
+
+.box-grid button.selected {
+    background: #ff6b81;
+    color: #fff;
+}
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -68,7 +96,12 @@ h2 {
     transition: background 0.3s;
 }
 
-.quantity-control button:hover {
+.quantity-control button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.quantity-control button:hover:not(:disabled) {
     background: #ff6b81;
 }
 
@@ -89,7 +122,12 @@ h2 {
     transition: background 0.3s;
 }
 
-.product-card button.add-to-cart:hover {
+.product-card button.add-to-cart:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.product-card button.add-to-cart:hover:not(:disabled) {
     background: #e55a70;
 }
 
@@ -200,6 +238,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .box-grid {
+        grid-template-columns: 1fr;
+    }
+
     .product-grid {
         grid-template-columns: 1fr;
     }
